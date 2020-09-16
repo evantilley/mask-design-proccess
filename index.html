@@ -44,9 +44,27 @@
   </head>
   <body>
     <div class = "container">
+      <nav class="p-0 navbar navbar-expand-lg navbar-light">
+        <a class="large nav-link black bold p-0">Maskquerade</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link lead" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link lead" href="#discover">Discover</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link lead" href="#develop">Develop</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <div class = "row">
         <div class = "col-12">
-          <span class = "large bold">Maskquerade</span> <br>
           <span class = "blue medium-smaller">A line of functional, efficient, and classy masks.</span>
         </div>
         <div class = "red bold">*going to add a bunch of fancy diagrams that model our process too</div>
@@ -76,28 +94,79 @@
           1 week
         </div>
       </div> <br>
-      <div class = "row text-center">
+      <div class = "row">
         <div class = "col-12">
-          <div class = "medium bold blue">
-            Discover and Define
+          <div id="discover" class = "bold blue medium">
+            <a style="text-decoration: none; cursor: pointer;" id="#discover">Discover and Define</a>
           </div>
         </div>
       </div>
       <div class = "row">
         <div class = "col-12">
-          <div class = "medium-smaller bold">
+          <div class = "medium-smaller mt-2 bold">
             Research
-          </div> 
-          <div class = "blue small-medium">
-            Thought Process
           </div>
-          <span>We couldn't create an improved mask without checking out some of the <b>current options.</b></span>
-          <div>
-            Looking at existing mask-types let us identify: <br>
-            1. <b>Pros  </b><br>
-            2. <b>Cons</b> <br>
-            3. <b>Unique use cases</b> <br>
-          </div>
+          <section>
+            <div class = "blue mt-2 mb-2 small-medium">
+              Thought Process
+            </div>
+            <div class="row">
+            <div class="lead col-sm-12 col-md-9">We couldn't create an improved mask without checking out some of the <em class="bold">current options.</em>
+            Looking at existing mask-types let us identify <strong>pros, cons, and unique use cases:</strong></div>
+            </div>
+            <dl class="row lead small-medium mt-3 text-left ml-1">
+              <dt class="col-sm-3"><span class="border-left pl-2">Medical</span></dt>
+              <dd class="col-sm-9 pl-4">
+                <span class="text-info">Comfortable.</span><br />
+                <span class="text-info">Proven to be effective.</span><br />
+                <span class="text-muted">Have a manually tie.</span><br />
+              </dd>
+              
+              <dt class="col-sm-3"><span class="border-left pl-2">Elastic</span></dt>
+              <dd class="col-sm-9 pl-4">
+                <span class="text-info">Adaptable to various faces.</span><br />
+                <span class="text-muted">Uncomfortable for sensitive-skin.</span><br />
+              </dd>
+
+              <dt class="col-sm-3"><span class="border-left pl-2">N95</span></dt>
+              <dd class="col-sm-9 pl-4">
+                <span class="text-info">Efficient & effective</span><br />
+                <span class="text-muted">Very rigid</span><br />
+                <span class="text-muted">Not meant for daily-consumer use.</span><br />
+              </dd>
+
+              <dt class="col-sm-3"><span class="border-left pl-2">KN95</span></dt>
+              <dd class="col-sm-9 pl-4">
+                <span class="text-info">Cloth-like.</span><br />
+                <span class="text-info">Adaptable to facial features.</span><br />
+              </dd>
+
+              <dt class="col-sm-3"><span class="border-left pl-2">Reusable</span></dt>
+              <dd class="col-sm-9 pl-4">
+                <span class="text-info">Enviromental friendly.</span><br />
+                <span class="text-muted">Have a buffer period between usage.</span><br />
+              </dd>
+
+              <dt class="col-sm-3"><span class="border-left pl-2">Painters</span></dt>
+              <dd class="col-sm-9 pl-4">
+                <span class="text-info">Readily available for consumers.</span><br />
+                <span class="text-muted">Viability is non-confirmed.</span><br />
+              </dd>
+
+              <dt class="col-sm-3"><span class="border-left pl-2">Sponge</span></dt>
+              <dd class="col-sm-9 pl-4">
+                <span class="text-info">Cheap to procure.</span><br />
+                <span class="text-muted">Known to be ineffective.</span><br />
+              </dd>
+
+              <dt class="col-sm-3"><span class="border-left pl-2">Bandana</span></dt>
+              <dd class="col-sm-9 pl-4">
+                <span class="text-info">Easy to make.</span><br />
+                <span class="text-muted">Questionable in material quality.</span><br />
+              </dd>
+
+            </dl>
+          </section>
         </div> 
       </div> <br>
       <div class = "row">
