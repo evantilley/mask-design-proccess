@@ -8,6 +8,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src = "script.js"></script>
+    
     <style>
       .large{
         font-size: 6vh;
@@ -64,6 +67,16 @@
         font-size: 2rem;
         text-align: center;
         padding: 25% 0;
+      }
+      #collapse1
+      {
+          cursor: pointer;
+      }
+      .mild-bold{
+        font-weight: 600;
+      }
+      .milder-bold{
+        font-weight: 500;
       }
     </style>
 
@@ -310,44 +323,48 @@
           <div class = "blue small-medium">
             Interviews
           </div>
-          In order to get a sense of how individuals use their masks, and identify key elements that would improve their experience, we interviewed three mask wearers, and created <b>User Journey Maps</b> to help visualize their descriptions.
+          <span class = "lead" >In order to get a sense of how individuals use their masks, and identify key elements that would improve their experience, we interviewed three mask wearers, and created <b>User Journey Maps</b> to help visualize their descriptions.</span>
         </div>
       </div> <br>
       <div class = "row">
-        <div class = "col-4">
-          <div class = "text-center small-medium"><b>Lord Crawford</b></div>
-          <b>Preferences</b> <br>
+        <div class = "col-4 lead">
+          <div class = "text-center small-medium mild-bold lead">Lord Crawford</div>
+          <span class = "milder-bold">Preferences</span> <br>
           - Light, comfortable mask for daily use <br>
-          - Mask that allows for high manueverability
-          <b>Concerns</b> <br>
+          - Mask that allows for high manueverability <br>
+          <span class = "milder-bold">Concerns</span> <br>
           - Reusability <br>
           - Breathability
           
         </div>
-        <div class = "col-4">
-          <div class = "text-center  small-medium"><b>Y.Y. Teng</b></div>
-          <b>Preferences</b> <br>
+        <div class = "col-4 lead">
+          <div class = "text-center mild-bold lead small-medium">Y.Y. Teng</div>
+          <span class = "milder-bold">Preferences</span> <br>
           - Mask with high breathability <br>
           - Durable masks <br>
-          <b>Concerns</b> <br>
+          <span class = "milder-bold">Concerns</span> <br>
           - Aesthetics <br>
           - Costs
         </div>
-        <div class = "col-4">
-          <div class = "text-center small-medium"><b>Julia L.</b></div>
-          <b>Preferences</b> <br>
-          - Comfortably material<br>
+        <div class = "col-4 lead">
+          <div class = "text-center lead mild-bold small-medium">Julia L.</div>
+          <span class = "milder-bold">Preferences</b> </span> <br>
+          - Comfortable material<br>
           - Breathability<br>
-          <b>Concerns</b> <br>
+          <span class = "milder-bold">Concerns</span> <br>
           - Availability <br>
           - Mask weight
         </div>
       </div> <br>
       <div class = "row">
-        <div class = "col-12 small-medium text-center">
-          <div class = "bold">
+        <div class = "col-12 small-medium">
+          <div class = "bold text-center">
             User Journeys
           </div>
+          <span class = "lead">
+            A map of mask usage for the three individuals interviewed. The height of the line represents the relative satisfaction of the user throughout different stages of the process.
+          </span> 
+          <br> <br>
           <img class = "img-fluid" src = "images/user-journey.png">
 
         </div>
@@ -360,10 +377,20 @@
           <div class = "blue small-medium">
             Essential Features
           </div>
-          Synthesizing information from our research, we were able to focus on several important features an ideal mask would have, including: <br>
-          - <b>Comfort</b>when worn for extended periods of time <br>
-          - Aesthetically pleasing <br>
-          - Readily available, at a <b>sustainable cost</b> <br> <br>
+          <div class = "lead">
+            Synthesizing information from our research, we were able to focus on several important features an ideal mask would have, including: <br>
+            <span class = "mild-bold" >Comfort</span> <span id = "collapse1" data-toggle="collapse" href="#collapseExample" class = "fa fa-chevron-down"></span> <br>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                An ideal mask should be able to be work for long periods of time without causing the user significant irritation.
+              </div>
+            </div>
+            when worn for extended periods of time <br>
+            - Aesthetically pleasing <br>
+            - Readily available, at a <b>sustainable cost</b> <br> <br>
+          </div>
+
+
 
           <div class = "blue small-medium">
             Target Questions
