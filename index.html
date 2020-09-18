@@ -94,6 +94,14 @@
       .milder-bold{
         font-weight: 500;
       }
+      #carouselIndicators{
+        margin-top:50px;
+        margin-left:50px;
+        margin-bottom:50px;
+      }
+      .carousel-indicators .active{
+        background-color: black;
+      }
     </style>
 
   </head>
@@ -535,11 +543,87 @@
           Brainstorm
           <img class = "img-fluid" src = "images/brainstorm.png">
         </div>
-        <div class = "col-12 medium-smaller bold">
+        <div class = "col-12 medium-smaller bold"><hr>
           Prototypes
-          ...insert 8 designs
         </div>
-        <div class = "col-12 medium-smaller bold">
+        <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselIndicators" data-slide-to="1" style="background-color: grey"></li>
+            <li data-target="#carouselIndicators" data-slide-to="2" style="background-color: grey"></li>
+            <li data-target="#carouselIndicators" data-slide-to="3" style="background-color: grey"></li>
+            <li data-target="#carouselIndicators" data-slide-to="4" style="background-color: grey"></li>
+            <li data-target="#carouselIndicators" data-slide-to="5" style="background-color: grey"></li>
+            <li data-target="#carouselIndicators" data-slide-to="6" style="background-color: grey"></li>
+            <li data-target="#carouselIndicators" data-slide-to="7" style="background-color: grey"></li>
+            <li data-target="#carouselIndicators" data-slide-to="8" style="background-color: grey"></li>
+          </ol>
+          <div class="carousel-inner" style="max-height: 450px; max-width: 450px; min-width: 450px;">
+            <div class="carousel-item active">
+              <div class="overlay-container">
+                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">1) Velcro Mask (On)</div>
+                <img class="d-block w-100" src="images/velcro_on_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="overlay-container">
+                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">1) Velcro Mask (Off)</div>
+                <img class="d-block w-100" src="images/velcro_off_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="overlay-container">
+                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">2) Mask with Stickers <br> (Children)</div>
+                <img class="d-block w-100" src="images/stickers_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="overlay-container">
+                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">3) Waterproof Mask</div>
+                <img class="d-block w-100" src="images/waterproof_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="overlay-container">
+                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">4) Mask with a Speaker</div>
+                <img class="d-block w-100" src="images/speakers_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="overlay-container">
+                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">5) Mask made for <br> Glasses-Wearers</div>
+                <img class="d-block w-100" src="images/for_glasses_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="overlay-container">
+                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">6) Foldable Mask <br> (Keychain Container)</div>
+                <img class="d-block w-100" src="images/foldable_keychain.png" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="overlay-container">
+                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">7) Foldable Mask <br> (Wallet)</div>
+                <img class="d-block w-100" src="images/foldable_wallet_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="overlay-container">
+                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">8) Color Changing Mask <br> Based on Usage</div>
+                <img class="d-block w-100" src="images/color_changing_prototype.png" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color:black; width: 50px; height: 50px;"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true" style="background-color:black; width: 50px; height: 50px;"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <div class = "col-12 medium-smaller bold"><hr>
           Test
           ...
         </div>
