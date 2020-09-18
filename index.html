@@ -1,634 +1,910 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Maskquerade</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,600;1,800&display=swap" rel="stylesheet">
-    <script src = "script.js"></script>
 
-    <style>
-      body {
-        font-family: 'Raleway', sans-serif !important;
-      }
-      .large{
-        font-size: 6vh;
-      }
-      .large-medium{
-        font-size: 5vh;
-      }
-      .medium{
-        font-size: 4vh;
-      }
-      .small-medium{
-        font-size: 2.5vh;
-      }
-      .medium-smaller{
-        font-size: 3vh;
-      }
+<head>
+  <meta charset="utf-8">
+  <title>Maskquerade</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,600;1,800&display=swap"
+    rel="stylesheet">
+  <script src="script.js"></script>
 
-      .smaller{
-        font-size: 2vh;
-      }
-      .red{
-        color: red;
-      }
-      .bold{
-        font-weight: bold;
-      }
-      .blue{
-        color: blue;
-      }
-      .italics{
-        font-style: italic;
-      }
-      .overlay-container {
-        position: relative;
-        height: 100%;
-        width: 100%;
-      }
-      .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        opacity: 0;
-        transition: opacity .5s linear;
-      }
-      .overlay-container:hover .overlay{
-        opacity: 1;
-        transition: opacity .5s linear;
-      }
-      .basic-over {
-        background-color: rgba(0, 0, 0, 0.6);
-        color: white;
-        width: 100%;
-        font-size: 2rem;
-        text-align: center;
-        padding: 25% 0;
-      }
-      #collapse1
-      {
-          cursor: pointer;
-      }
-      #collapse2
-      {
-          cursor: pointer;
-      }
-      #collapse3
-      {
-          cursor: pointer;
-      }
-      #collapse4
-      {
-          cursor: pointer;
-      }
-      .mild-bold{
-        font-weight: 600;
-      }
-      .milder-bold{
-        font-weight: 500;
-      }
-      #carouselIndicators{
-        margin-top:50px;
-        margin-left:50px;
-        margin-bottom:50px;
-      }
-      .carousel-indicators .active{
-        background-color: black;
-      }
-    </style>
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif !important;
+    }
 
-  </head>
-  <body>
-    <div class="container">
-      <nav class="p-0 mt-2 navbar navbar-expand-lg navbar-light">
-        <a class="large nav-link black bold p-0">Maskquerade</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    .large {
+      font-size: 6vh;
+    }
+
+    .large-medium {
+      font-size: 5vh;
+    }
+
+    .medium {
+      font-size: 4vh;
+    }
+
+    .small-medium {
+      font-size: 2.5vh;
+    }
+
+    .medium-smaller {
+      font-size: 3vh;
+    }
+
+    .smaller {
+      font-size: 2vh;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .blue {
+      color: blue;
+    }
+
+    .italics {
+      font-style: italic;
+    }
+
+    .overlay-container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      opacity: 0;
+      transition: opacity .5s linear;
+    }
+
+    .overlay-container:hover .overlay {
+      opacity: 1;
+      transition: opacity .5s linear;
+    }
+
+    .basic-over {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      width: 100%;
+      font-size: 2rem;
+      text-align: center;
+      padding: 25% 0;
+    }
+
+    #collapse1 {
+      cursor: pointer;
+    }
+
+    #collapse2 {
+      cursor: pointer;
+    }
+
+    #collapse3 {
+      cursor: pointer;
+    }
+
+    #collapse4 {
+      cursor: pointer;
+    }
+
+    .mild-bold {
+      font-weight: 600;
+    }
+
+    .img-resize {
+      max-width: 30vw;
+      max-height: 30vh;
+      width: auto;
+      height: auto;
+    }
+
+    .milder-bold {
+      font-weight: 500;
+    }
+
+    #carouselIndicators {
+      margin-top: 50px;
+      margin-left: 50px;
+      margin-bottom: 50px;
+    }
+
+    .bottom-padding{
+      padding-bottom: 11vh !important;
+    }
+
+    .carousel-indicators .active {
+      background-color: black;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <nav class="p-0 mt-2 navbar navbar-expand-lg navbar-light">
+      <a class="large nav-link black bold p-0">Maskquerade</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse display-block" id="navbarNav">
-          <ul class="navbar-nav pt-sm-0 pt-md-4 pt-xl-3">
-            <li class="nav-item active">
-              <a class="nav-link lead pb-0 pt-sm-0 pt-md-2" href="#home">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link lead pb-0" href="#discover">Discover</a>
-            </li>
-            <li class="nav-item display-inline float-right">
-              <a class="nav-link lead" href="#develop">Develop</a>
-            </li>
-          </ul>
+      </button>
+      <div class="collapse navbar-collapse display-block" id="navbarNav">
+        <ul class="navbar-nav pt-sm-0 pt-md-4 pt-xl-3">
+          <li class="nav-item active">
+            <a class="nav-link lead pb-0 pt-sm-0 pt-md-2" href="#home">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link lead pb-0" href="#discover">Discover</a>
+          </li>
+          <li class="nav-item display-inline float-right">
+            <a class="nav-link lead" href="#develop">Develop</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="home" class="row">
+      <div class="col-12">
+        <span class="blue medium-smaller lead">A line of functional, efficient, and classy masks.</span>
+      </div>
+    </div> <br>
+    <div class="row">
+      <div class="col-12">
+        <div class="bold medium-smaller mt-1 mb-2">
+          Background
         </div>
-      </nav>
-      <div id="home" class="row">
-        <div class="col-12">
-          <span class="blue medium-smaller lead">A line of functional, efficient, and classy masks.</span>
-        </div>
+        <span class="blue small-medium mt-2 mb-2">Our Goal</span> <br>
+        <span class="lead">Create a mask that others</span>
+        <span class="italics lead">want</span>
+        <span class="lead">to wear.</span> <br>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="blue small-medium mt-2 mb-2">Timeframe</div>
+        <span class="lead">1 week</span>
+        <hr>
       </div> <br>
-      <div class = "row">
-        <div class = "col-12">
-          <div class = "bold medium-smaller mt-1 mb-2">
-            Background
+      <div class="col-12">
+        <div class="blue small-medium mt-2 mb-2">The Team</div><br>
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-3 pb-1">
+            <div class="card">
+              <blockquote class="blockquote mb-0 card-body">
+                Lord Crawford
+                <footer class="blockquote-footer">
+                  <p>Computer Science</p>
+                </footer>
+              </blockquote>
+            </div>
           </div>
-          <span class = "blue small-medium mt-2 mb-2">Our Goal</span> <br>
-          <span class = "lead">Create a mask that others</span>
-          <span class = "italics lead">want</span>
-          <span class = "lead">to wear.</span> <br> <hr>
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="card">
+              <blockquote class="blockquote mb-0 card-body">
+                Yuanyang Teng
+                <footer class="blockquote-footer">
+                  <p>Architecture</p>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="card">
+              <blockquote class="blockquote mb-0 card-body">
+                Julio Gomez
+                <footer class="blockquote-footer">
+                  <p>Computer Science</p>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="card">
+              <blockquote class="blockquote mb-0 card-body">
+                Xabier Peralta
+                <footer class="blockquote-footer">
+                  <p>Computer Science</p>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-3 pb-1">
+            <div class="card">
+              <blockquote class="blockquote mb-0 card-body">
+                Evan Tilley
+                <footer class="blockquote-footer">
+                  <p>Computer Engineering</p>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="card">
+              <blockquote class="blockquote mb-0 card-body">
+                Julia Lin
+                <footer class="blockquote-footer">
+                  <p>Architecture</p>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="card">
+              <blockquote class="blockquote mb-0 card-body">
+                Dillon Davis
+                <footer class="blockquote-footer">
+                  <p>Computer Science</p>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="card">
+              <blockquote class="blockquote mb-0 card-body">
+                Roopa Bhat
+                <footer class="blockquote-footer">
+                  <p>Computer Science</p>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </div><br>
+      </div>
+    </div> <br>
+    <div class="row">
+      <div class="col-12">
+        <div id="discover" class="bold blue medium pl-0">
+          <a style="text-decoration: none; cursor: pointer;" href="#discover">Discover and Define</a>
         </div>
       </div>
-      <div class = "row">
-        <div class = "col-12">
-          <div class = "blue small-medium mt-2 mb-2">Timeframe</div>
-          <span class = "lead"></span>1 week<hr>
+    </div><br>
+    <div class="row">
+      <div class="col-12">
+        <div class="medium-smaller mt-2 bold lead">
+          Research
+        </div>
+        <section>
+          <div class="blue mt-2 mb-2 small-medium">
+            Thought Process
+          </div>
+          <div class="row">
+            <div class="lead col-sm-12 col-md-9">We couldn't create an improved mask without checking out some of the
+              <em class="bold">current options.</em>
+              Looking at existing mask-types let us identify <strong>pros, cons, and unique use cases:</strong></div>
+          </div><br>
+          <dl class="row lead small-medium mt-3 text-left ml-1">
+            <dt class="col-sm-3"><span class="border-left pl-2">Medical</span></dt>
+            <dd class="col-sm-9 pl-4">
+              <span class="text-info">Comfortable.</span><br />
+              <span class="text-info">Proven to be effective.</span><br />
+              <span class="text-muted">Have a manually tie.</span><br />
+            </dd>
+
+            <dt class="col-sm-3"><span class="border-left pl-2">Elastic</span></dt>
+            <dd class="col-sm-9 pl-4">
+              <span class="text-info">Adaptable to various faces.</span><br />
+              <span class="text-muted">Uncomfortable for sensitive-skin.</span><br />
+            </dd>
+
+            <dt class="col-sm-3"><span class="border-left pl-2">N95</span></dt>
+            <dd class="col-sm-9 pl-4">
+              <span class="text-info">Efficient & effective</span><br />
+              <span class="text-muted">Very rigid</span><br />
+              <span class="text-muted">Not meant for daily-consumer use.</span><br />
+            </dd>
+
+            <dt class="col-sm-3"><span class="border-left pl-2">KN95</span></dt>
+            <dd class="col-sm-9 pl-4">
+              <span class="text-info">Cloth-like.</span><br />
+              <span class="text-info">Adaptable to facial features.</span><br />
+            </dd>
+
+            <dt class="col-sm-3"><span class="border-left pl-2">Reusable</span></dt>
+            <dd class="col-sm-9 pl-4">
+              <span class="text-info">Enviromental friendly.</span><br />
+              <span class="text-muted">Have a buffer period between usage.</span><br />
+            </dd>
+
+            <dt class="col-sm-3"><span class="border-left pl-2">Painters</span></dt>
+            <dd class="col-sm-9 pl-4">
+              <span class="text-info">Readily available for consumers.</span><br />
+              <span class="text-muted">Viability is non-confirmed.</span><br />
+            </dd>
+
+            <dt class="col-sm-3"><span class="border-left pl-2">Sponge</span></dt>
+            <dd class="col-sm-9 pl-4">
+              <span class="text-info">Cheap to procure.</span><br />
+              <span class="text-muted">Known to be ineffective.</span><br />
+            </dd>
+
+            <dt class="col-sm-3"><span class="border-left pl-2">Bandana</span></dt>
+            <dd class="col-sm-9 pl-4">
+              <span class="text-info">Easy to make.</span><br />
+              <span class="text-muted">Questionable in material quality.</span><br />
+            </dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="blue small-medium pb-2">
+          Relevant Images
+        </div>
+        <div class="row">
+          <div class="lead col-sm-12 col-md-12 col-lg-12 pb-2">
+            To gain a sense of the design of existing mask models, we compiled several images that we thought might be
+            useful in designing future prototypes.
+          </div>
+        </div><br>
+        <div class="row pb-2">
+          <div class="col-xs-3 col-sm-3 pb-1 col-md-3">
+            <div class="overlay-container">
+              <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">Institution
+                Provided Mask</div>
+              <img style="max-height: 250px; min-width: 250px;" src="./columbia_mask.jpg" alt="..."
+                class="img-thumbnail">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="overlay-container">
+              <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">One-Time
+                Use Masks</div>
+              <img style="max-height: 250px; min-width: 250px;" src="./disposable_mask.jpg" alt="..."
+                class="img-thumbnail">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="overlay-container">
+              <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">Elastic
+                Mask</div>
+              <img style="max-height: 250px; min-width: 250px;" src="./elastic.jpeg" alt="..." class="img-thumbnail">
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="overlay-container">
+              <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">KN95 Mask
+              </div>
+              <img style="max-height: 250px; min-width: 250px;" src="./kn95.jpeg" alt="..." class="img-thumbnail">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row pb-2">
+          <div class="col-xs-3 col-sm-3 pb-1 col-md-3">
+            <div class="overlay-container">
+              <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">Surgical
+                Mask</div>
+              <img style="max-height: 250px; min-width: 250px;" src="./medical_mask.jpg" alt="..."
+                class="img-thumbnail">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="overlay-container">
+              <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">N95 Mask
+              </div>
+              <img style="max-height: 250px; min-width: 250px;" src="./n95.jpeg" alt="..." class="img-thumbnail">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="overlay-container">
+              <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">Painters
+                Mask</div>
+              <img style="max-height: 250px; min-width: 250px;" src="./painters_mask.jpg" alt="..."
+                class="img-thumbnail">
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="overlay-container">
+              <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">Sponge Mask
+              </div>
+              <img style="max-height: 250px; min-width: 250px;" src="./sponge_mask.jpg" alt="..." class="img-thumbnail">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div> <br>
+    <hr>
+    <div class="row">
+      <div class="col-12">
+        <div class="blue small-medium pb-2">
+          Target Users
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-5">
+            <div class="list-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list"
+                href="#list-home" role="tab" aria-controls="home">One-Handed <span class="float-right">🙋‍♂️</span></a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+                href="#list-profile" role="tab" aria-controls="profile">Asmathics <span
+                  class="float-right">😷</span></a>
+              <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
+                href="#list-messages" role="tab" aria-controls="messages">Deaf & Mute <span
+                  class="float-right">👂</span></a>
+              <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+                href="#list-settings" role="tab" aria-controls="settings">Kids <span class="float-right">🐣</span></a>
+            </div>
+          </div>
+          <div class="col-sm-7 col-md-5 mt-sm-0">
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                <p class="lead">
+                  People with <strong>arm-amputations</strong> may find it difficult to put on a mask via straps. That
+                  means that amputees are a unique demographics for mask-wearers as due in fact of how <em
+                    class="bold">their condition contradicts the very nature of putting on a mask.</em>
+                </p>
+              </div>
+              <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                <p class="lead">
+                  People who suffer from <strong>asthma, chronic respitorary diseases and the like,</strong> are often
+                  weary of putting on anything that might <em class="bold">inhibits their ability</em> to breathe or
+                  dimish their blood-oxygen levels.
+                </p>
+              </div>
+              <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                <p class="lead">
+                  People with <strong>hearing-impairment</strong> can no longer rely on reading lips if another person
+                  is wearing a mask. Another is those with <strong>vocal-impairments</strong> may find it moe
+                  uncomfrtable to voice themselves behind the <em class="bold">muffling effect</em> of a mask.
+                </p>
+              </div>
+              <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                <p class="lead">
+                  It can sometimes be difficult to not only <strong>convince children to wear masks</strong> out of
+                  necessity, but also that <strong>said mask is resilient enough</strong> to handle the spontaneous
+                  lifestle of an active child.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><br><br>
+    <hr><br><br>
+    <div class="row">
+      <div class="col-12">
+        <div id="develop" class="medium bold blue">
+          <a style="text-decoration: none; cursor: pointer;" href="#develop">Develop and Deliver</a>
+        </div><br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="medium-smaller bold pb-2 pt-2">
+          Engagement
+        </div>
+        <div class="blue small-medium">
+          Interviews
+        </div>
+        <span class="lead">In order to get a sense of how individuals use their masks, and identify key elements that
+          would improve their experience, we interviewed three mask wearers, and created <b>User Journey Maps</b> to
+          help visualize their descriptions.</span>
+      </div>
+    </div><br>
+    <div class="row pt-2">
+      <div class="col-4 lead">
+        <div class="small-medium mild-bold lead">Lord Crawford</div>
+        <hr>
+        <span class="milder-bold"><u>Preferences</u></span><br>
+        - Light, comfortable mask for daily use <br>
+        - Mask that allows for high manueverability <br>
+      </div>
+      <div class="col-4 lead">
+        <div class="mild-bold lead small-medium">Y.Y. Teng</div>
+        <hr>
+        <span class="milder-bold"><u>Preferences</u></span> <br>
+        - Mask with high breathability <br>
+        - Durable masks <br>
+      </div>
+      <div class="col-4 lead">
+        <div class="lead mild-bold small-medium">Julia L.</div>
+        <hr>
+        <span class="milder-bold"><u>Preferences</u></b> </span><br>
+        - Comfortable material<br>
+        - Breathability<br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4 lead">
+        <span class="milder-bold"><u>Concerns</u></span> <br>
+        - Reusability <br>
+        - Breathability
+      </div>
+      <div class="col-4 lead">
+        <span class="milder-bold"><u>Concerns</u></span> <br>
+        - Aesthetics <br>
+        - Costs
+      </div>
+      <div class="col-4 lead">
+        <span class="milder-bold"><u>Concerns</u></span><br>
+        - Availability <br>
+        - Mask weight
+      </div>
+    </div> <br>
+    <hr>
+    <div class="row">
+      <div class="col-12 small-medium">
+        <div class="bold">
+          User Journeys
+        </div>
+        <span class="lead">
+          A map of mask usage for the three individuals interviewed. The height of the line represents the relative
+          satisfaction of the user throughout different stages of the process.
+        </span>
+        <br> <br>
+        <img class="img-fluid" src="images/user-journey.png">
+
+      </div>
+    </div> <br>
+    <hr>
+    <div class="row">
+      <div class="col-12">
+        <div class="medium-smaller bold">
+          Synthesis
+        </div>
+        <div class="blue small-medium">
+          Essential Features
+        </div>
+        <div class="lead">
+          Synthesizing information from our research, we were able to focus on several important features an ideal mask
+          would have, including: <br>
+          <div class="pt-1 pb-2">
+            <span class="mild-bold">Comfort</span> <span id="collapse1" data-toggle="collapse" href="#collapseExample"
+              class="fa fa-chevron-down"></span> <br>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body mt-1">
+                A Maskquerade mask should be able to be worn for long periods of time without causing the user
+                significant irritation.
+              </div>
+            </div>
+          </div>
+          <div class="pb-2">
+            <span class="mild-bold">Aesthetics</span> <span id="collapse2" data-toggle="collapse"
+              href="#collapseaesthetic" class="fa fa-chevron-down"></span>
+            <div class="collapse" id="collapseaesthetic">
+              <div class="card card-body mt-1">
+                A Maskquerade mask should be fashionable so that indiviudals who are concerned about their appearance
+                will not be self-conscious wearing the mask in public.
+              </div>
+            </div>
+          </div>
+          <div class="pb-2">
+            <span class="mild-bold">Reusability</span> <span id="collapse3" data-toggle="collapse"
+              href="#collapseavailability" class="fa fa-chevron-down"></span> <span class="padding-bottom">
+              <div class="collapse" id="collapseavailability">
+                <div class="card card-body">
+                  A Maskquerade mask should cater to those who are worried about their impact on their environment by
+                  having a high reusability and/or being produced with biodegradable materials.
+                </div>
+              </div>
+          </div>
+          <span class="mild-bold">Functionality</span> <span id="collapse4" data-toggle="collapse"
+            href="#collapseaccesible" class="fa fa-chevron-down"></span>
+          <div class="collapse" id="collapseaccesible">
+            <div class="card card-body">
+              A Maskquerade mask should have a variety of functions, including options for waterproofing and strap-on
+              styles. It should also not exclude target audiences like those who have auditory impairments.
+            </div>
+          </div>
         </div> <br>
-        <div class = "col-12">
-          <div class = "blue small-medium mt-2 mb-2">The Team</div><br>
-          <div class="row">
-            <div class="col-sm-6 col-md-6 col-lg-3 pb-1">
-              <div class="card">
-                <blockquote class="blockquote mb-0 card-body">
-                  Lord Crawford
-                  <footer class="blockquote-footer">
-                    <p>Computer Science</p>
-                  </footer>
-                </blockquote>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-              <div class="card">
-                <blockquote class="blockquote mb-0 card-body">
-                  Yuanyang Teng
-                  <footer class="blockquote-footer">
-                    <p>Architecture</p>
-                  </footer>
-                </blockquote>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-              <div class="card">
-                <blockquote class="blockquote mb-0 card-body">
-                  Julio Gomez
-                  <footer class="blockquote-footer">
-                    <p>Computer Science</p>
-                  </footer>
-                </blockquote>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-              <div class="card">
-                <blockquote class="blockquote mb-0 card-body">
-                  Xabier Peralta
-                  <footer class="blockquote-footer">
-                    <p>Computer Science</p>
-                  </footer>
-                </blockquote>
-              </div>
-            </div>
-          </div><br>
-          <div class="row">
-            <div class="col-sm-6 col-md-6 col-lg-3 pb-1">
-              <div class="card">
-                <blockquote class="blockquote mb-0 card-body">
-                  Evan Tilley
-                  <footer class="blockquote-footer">
-                    <p>Computer Engineering</p>
-                  </footer>
-                </blockquote>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-              <div class="card">
-                <blockquote class="blockquote mb-0 card-body">
-                  Julia Lin
-                  <footer class="blockquote-footer">
-                    <p>Architecture</p>
-                  </footer>
-                </blockquote>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-              <div class="card">
-                <blockquote class="blockquote mb-0 card-body">
-                  Dillon Davis
-                  <footer class="blockquote-footer">
-                    <p>Computer Science</p>
-                  </footer>
-                </blockquote>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-              <div class="card">
-                <blockquote class="blockquote mb-0 card-body">
-                  Roopa Bhat
-                  <footer class="blockquote-footer">
-                    <p>Computer Science</p>
-                  </footer>
-                </blockquote>
-              </div>
-            </div>
-          </div><br>
+        <div class="blue small-medium">
+          Target Questions
         </div>
-      </div> <br>
-      <div class = "row">
-        <div class = "col-12">
-          <div id="discover" class = "bold blue medium pl-0">
-            <a style="text-decoration: none; cursor: pointer;" href="#discover">Discover and Define</a>
-          </div>
+        <div class="lead">
+          We ultimately framed our research as three questions to summarize what we had discovered: <br>
+          <span class="mild-bold">1.</span> How can we design masks that are comfortable but do not compromise on
+          functionality? <br>
+          <span class="mild-bold">2.</span> How can we make masks a more socially admirable item? <br>
+          <span class="mild-bold">3.</span> Can we make the masks more equitably distributable?
         </div>
-      </div><br>
-      <div class = "row">
-        <div class = "col-12">
-          <div class = "medium-smaller mt-2 bold lead">
-            Research
-          </div>
-          <section>
-            <div class = "blue mt-2 mb-2 small-medium">
-              Thought Process
-            </div>
-            <div class="row">
-            <div class="lead col-sm-12 col-md-9">We couldn't create an improved mask without checking out some of the <em class="bold">current options.</em>
-            Looking at existing mask-types let us identify <strong>pros, cons, and unique use cases:</strong></div>
-          </div><br>
-            <dl class="row lead small-medium mt-3 text-left ml-1">
-              <dt class="col-sm-3"><span class="border-left pl-2">Medical</span></dt>
-              <dd class="col-sm-9 pl-4">
-                <span class="text-info">Comfortable.</span><br />
-                <span class="text-info">Proven to be effective.</span><br />
-                <span class="text-muted">Have a manually tie.</span><br />
-              </dd>
 
-              <dt class="col-sm-3"><span class="border-left pl-2">Elastic</span></dt>
-              <dd class="col-sm-9 pl-4">
-                <span class="text-info">Adaptable to various faces.</span><br />
-                <span class="text-muted">Uncomfortable for sensitive-skin.</span><br />
-              </dd>
-
-              <dt class="col-sm-3"><span class="border-left pl-2">N95</span></dt>
-              <dd class="col-sm-9 pl-4">
-                <span class="text-info">Efficient & effective</span><br />
-                <span class="text-muted">Very rigid</span><br />
-                <span class="text-muted">Not meant for daily-consumer use.</span><br />
-              </dd>
-
-              <dt class="col-sm-3"><span class="border-left pl-2">KN95</span></dt>
-              <dd class="col-sm-9 pl-4">
-                <span class="text-info">Cloth-like.</span><br />
-                <span class="text-info">Adaptable to facial features.</span><br />
-              </dd>
-
-              <dt class="col-sm-3"><span class="border-left pl-2">Reusable</span></dt>
-              <dd class="col-sm-9 pl-4">
-                <span class="text-info">Enviromental friendly.</span><br />
-                <span class="text-muted">Have a buffer period between usage.</span><br />
-              </dd>
-
-              <dt class="col-sm-3"><span class="border-left pl-2">Painters</span></dt>
-              <dd class="col-sm-9 pl-4">
-                <span class="text-info">Readily available for consumers.</span><br />
-                <span class="text-muted">Viability is non-confirmed.</span><br />
-              </dd>
-
-              <dt class="col-sm-3"><span class="border-left pl-2">Sponge</span></dt>
-              <dd class="col-sm-9 pl-4">
-                <span class="text-info">Cheap to procure.</span><br />
-                <span class="text-muted">Known to be ineffective.</span><br />
-              </dd>
-
-              <dt class="col-sm-3"><span class="border-left pl-2">Bandana</span></dt>
-              <dd class="col-sm-9 pl-4">
-                <span class="text-info">Easy to make.</span><br />
-                <span class="text-muted">Questionable in material quality.</span><br />
-              </dd>
-            </dl>
-          </section>
-        </div>
-      </div> <hr>
-      <div class = "row">
-        <div class = "col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <div class = "blue small-medium pb-2">
-            Relevant Images
-          </div>
-          <div class="row">
-            <div class = "lead col-sm-12 col-md-12 col-lg-12 pb-2">
-              To gain a sense of the design of existing mask models, we compiled several images that we thought might be useful in designing future prototypes.
-            </div>
-          </div><br>
-          <div class="row pb-2">
-            <div class="col-xs-3 col-sm-3 pb-1 col-md-3">
-              <div class="overlay-container">
-                <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">Institution Provided Mask</div>
-                <img style="max-height: 250px; min-width: 250px;" src="./columbia_mask.jpg" alt="..." class="img-thumbnail">
-              </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3">
-              <div class="overlay-container">
-                <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">One-Time Use Masks</div>
-                <img style="max-height: 250px; min-width: 250px;" src="./disposable_mask.jpg" alt="..." class="img-thumbnail">
-              </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3">
-              <div class="overlay-container">
-                <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">Elastic Mask</div>
-                <img style="max-height: 250px; min-width: 250px;" src="./elastic.jpeg" alt="..." class="img-thumbnail">
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="overlay-container">
-                <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">KN95 Mask</div>
-                <img style="max-height: 250px; min-width: 250px;" src="./kn95.jpeg" alt="..." class="img-thumbnail">
-              </div>
+      </div>
+    </div> <br>
+    <hr>
+    <div class="row">
+      <div class="col-12 medium-smaller bold">
+        Brainstorm
+        <img class="img-fluid" src="images/brainstorm.png">
+      </div>
+      <div class="col-12 medium-smaller bold">
+        <hr>
+        Prototypes
+      </div>
+      <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselIndicators" data-slide-to="1" style="background-color: grey"></li>
+          <li data-target="#carouselIndicators" data-slide-to="2" style="background-color: grey"></li>
+          <li data-target="#carouselIndicators" data-slide-to="3" style="background-color: grey"></li>
+          <li data-target="#carouselIndicators" data-slide-to="4" style="background-color: grey"></li>
+          <li data-target="#carouselIndicators" data-slide-to="5" style="background-color: grey"></li>
+          <li data-target="#carouselIndicators" data-slide-to="6" style="background-color: grey"></li>
+          <li data-target="#carouselIndicators" data-slide-to="7" style="background-color: grey"></li>
+          <li data-target="#carouselIndicators" data-slide-to="8" style="background-color: grey"></li>
+        </ol>
+        <div class="carousel-inner" style="max-height: 600px; max-width: 600px; min-width: 600px;">
+          <div class="carousel-item active">
+            <div class="overlay-container">
+              <div style="max-height: 600px; max-width: 600px; min-width: 600px;" class="overlay basic-over">1) Velcro
+                Mask (On)</div>
+              <img class="d-block w-100" src="images/velcro_on_prototype.jpg" alt="First slide"
+                style="max-height: 600px; max-width: 600px; min-width: 600px;">
             </div>
           </div>
-
-
-          <div class="row pb-2">
-            <div class="col-xs-3 col-sm-3 pb-1 col-md-3">
-              <div class="overlay-container">
-                <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">Surgical Mask</div>
-                <img style="max-height: 250px; min-width: 250px;" src="./medical_mask.jpg" alt="..." class="img-thumbnail">
-              </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3">
-              <div class="overlay-container">
-                <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">N95 Mask</div>
-                <img style="max-height: 250px; min-width: 250px;" src="./n95.jpeg" alt="..." class="img-thumbnail">
-              </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3">
-              <div class="overlay-container">
-                <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">Painters Mask</div>
-                <img style="max-height: 250px; min-width: 250px;" src="./painters_mask.jpg" alt="..." class="img-thumbnail">
-              </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3">
-              <div class="overlay-container">
-                <div style="max-height: 250px; max-width: 250px; min-width: 250px;" class="overlay basic-over">Sponge Mask</div>
-                <img style="max-height: 250px; min-width: 250px;" src="./sponge_mask.jpg" alt="..." class="img-thumbnail">
-              </div>
+          <div class="carousel-item">
+            <div class="overlay-container">
+              <div style="max-height: 600px; max-width: 600px; min-width: 600px;" class="overlay basic-over">Velcro Mask
+                (Off)</div>
+              <img class="d-block w-100" src="images/velcro_off_prototype.jpg" alt="First slide"
+                style="max-height: 600px; max-width: 600px; min-width: 600px;">
             </div>
           </div>
-
-        </div>
-      </div> <br> <hr>
-      <div class = "row">
-        <div class = "col-12">
-          <div class = "blue small-medium pb-2">
-            Target Users
-          </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-5">
-              <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">One-Handed <span class="float-right">🙋‍♂️</span></a>
-                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Asmathics <span class="float-right">😷</span></a>
-                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Deaf & Mute <span class="float-right">👂</span></a>
-                <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Kids <span class="float-right">🐣</span></a>
-              </div>
+          <div class="carousel-item">
+            <div class="overlay-container">
+              <div style="max-height: 600px; max-width: 600px; min-width: 600px;" class="overlay basic-over">2) Mask
+                with Stickers <br> (Children)</div>
+              <img class="d-block w-100" src="images/stickers_prototype.jpg" alt="First slide"
+                style="max-height: 600px; max-width: 600px; min-width: 600px;">
             </div>
-            <div class="col-sm-7 col-md-5 mt-sm-0">
-              <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-                  <p class="lead">
-                    People with <strong>arm-amputations</strong> may find it difficult to put on a mask via straps. That means that amputees are a unique demographics for mask-wearers as due in fact of how <em class="bold">their condition contradicts the very nature of putting on a mask.</em>
-                  </p>
-                </div>
-                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-                  <p class="lead">
-                    People who suffer from <strong>asthma, chronic respitorary diseases and the like,</strong> are often weary of putting on anything that might <em class="bold">inhibits their ability</em> to breathe or dimish their blood-oxygen levels.
-                  </p>
-                </div>
-                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-                  <p class="lead">
-                    People with <strong>hearing-impairment</strong> can no longer rely on reading lips if another person is wearing a mask. Another is those with <strong>vocal-impairments</strong> may find it moe uncomfrtable to voice themselves behind the <em class="bold">muffling effect</em> of a mask.
-                  </p>
-                </div>
-                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-                  <p class="lead">
-                    It can sometimes be difficult to not only <strong>convince children to wear masks</strong> out of necessity, but also that <strong>said mask is resilient enough</strong> to handle the spontaneous lifestle of an active child.
-                  </p>
-                </div>
-              </div>
+          </div>
+          <div class="carousel-item">
+            <div class="overlay-container">
+              <div style="max-height: 600px; max-width: 600px; min-width: 600px;" class="overlay basic-over">3)
+                Waterproof Mask</div>
+              <img class="d-block w-100" src="images/waterproof_prototype.jpg" alt="First slide"
+                style="max-height: 600px; max-width: 600px; min-width: 600px;">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="overlay-container">
+              <div style="max-height: 600px; max-width: 600px; min-width: 600px;" class="overlay basic-over">4) Mask
+                with a Speaker</div>
+              <img class="d-block w-100" src="images/speakers_prototype.jpg" alt="First slide"
+                style="max-height: 600px; max-width: 600px; min-width: 600px;">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="overlay-container">
+              <div style="max-height: 600px; max-width: 600px; min-width: 600px;" class="overlay basic-over">5) Mask
+                made for <br> Glasses-Wearers</div>
+              <img class="d-block w-100" src="images/for_glasses_prototype.jpg" alt="First slide"
+                style="max-height: 600px; max-width: 600px; min-width: 600px;">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="overlay-container">
+              <div style="max-height: 600px; max-width: 600px; min-width: 600px;" class="overlay basic-over">6) Foldable
+                Mask <br> (Keychain Container)</div>
+              <img class="d-block w-100" src="images/foldable_keychain.png" alt="First slide"
+                style="max-height: 600px; max-width: 600px; min-width: 600px;">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="overlay-container">
+              <div style="max-height: 600px; max-width: 600px; min-width: 600px;" class="overlay basic-over">7) Foldable
+                Mask <br> (Wallet)</div>
+              <img class="d-block w-100" src="images/foldable_wallet_prototype.jpg" alt="First slide"
+                style="max-height: 600px; max-width: 600px; min-width: 600px;">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="overlay-container">
+              <div style="max-height: 600px; max-width: 600px; min-width: 600px;" class="overlay basic-over">8) Color
+                Changing Mask <br> Based on Usage</div>
+              <img class="d-block w-100" src="images/color_changing_prototype.png" alt="First slide"
+                style="max-height: 600px; max-width: 600px; min-width: 600px;">
             </div>
           </div>
         </div>
-      </div><br><br><hr><br><br>
-      <div class = "row">
-        <div class = "col-12">
-          <div id="develop" class = "medium bold blue">
-            <a style="text-decoration: none; cursor: pointer;" href="#develop">Develop and Deliver</a>
-          </div><br>
+        <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"
+            style="background-color:black; width: 50px; height: 50px;"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"
+            style="background-color:black; width: 50px; height: 50px;"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="bold medium-smaller">
+          Testing
+        </div>
+        <div class="lead">
+          In order to determine which of our 3 prototypes were the most promising, we performed a heuristic evaluation
+          of each one of the prototype masks we created.
+        </div> <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <div class="mild-bold lead blue">
+          Velcro Mask <br>
+        </div>
+        <div class="lead"><u>Pros</u></div>
+        <div class="info">
+          - Easily Adjustable <br>
+          - Can equip with one hand <br>
+        </div>
+        <div class="lead"><u>Cons</u></div>
+        <div class="info">
+          - Lacking in aesthetics <br>
         </div>
       </div>
-      <div class = "row">
-        <div class = "col-12">
-          <div class = "medium-smaller bold pb-2 pt-2">
-            Engagement
-          </div>
-          <div class = "blue small-medium">
-            Interviews
-          </div>
-          <span class = "lead" >In order to get a sense of how individuals use their masks, and identify key elements that would improve their experience, we interviewed three mask wearers, and created <b>User Journey Maps</b> to help visualize their descriptions.</span>
+      <div class="col-3">
+        <div class="mild-bold lead blue">
+          Stickers Mask <br>
         </div>
-      </div><br>
-      <div class = "row pt-2">
-        <div class = "col-4 lead">
-          <div class = "small-medium mild-bold lead">Lord Crawford</div><hr>
-          <span class = "milder-bold"><u>Preferences</u></span><br>
-          - Light, comfortable mask for daily use <br>
-          - Mask that allows for high manueverability <br>
+        <div class="lead"><u>Pros</u></div>
+        <div class="info">
+          - Encourages children to wear masks <br>
+          - Customizable and fun <br>
         </div>
-        <div class = "col-4 lead">
-          <div class = "mild-bold lead small-medium">Y.Y. Teng</div><hr>
-          <span class = "milder-bold"><u>Preferences</u></span> <br>
-          - Mask with high breathability <br>
-          - Durable masks <br>
-        </div>
-        <div class = "col-4 lead">
-          <div class = "lead mild-bold small-medium">Julia L.</div><hr>
-          <span class = "milder-bold"><u>Preferences</u></b> </span><br>
-          - Comfortable material<br>
-          - Breathability<br>
+        <div class="lead"><u>Cons</u></div>
+        <div class="info">
+          - Issue of reusability with stickers <br>
+          - Potential for stickers to impact breathability <br>
         </div>
       </div>
-      <div class="row">
-        <div class="col-4 lead">
-          <span class = "milder-bold"><u>Concerns</u></span> <br>
-          - Reusability <br>
-          - Breathability
+      <div class="col-3">
+        <div class="mild-bold lead blue">
+          Waterproof Mask <br>
         </div>
-        <div class="col-4 lead">
-          <span class = "milder-bold"><u>Concerns</u></span> <br>
-          - Aesthetics <br>
-          - Costs
+        <div class="lead"><u>Pros</u></div>
+        <div class="info">
+          - Durable under rough weather conditions<br>
+          - Allows for walks in the rain <br>
         </div>
-        <div class="col-4 lead">
-          <span class = "milder-bold"><u>Concerns</u></span><br>
-          - Availability <br>
-          - Mask weight
+        <div class="lead"><u>Cons</u></div>
+        <div class="info">
+          - Expensive material<br>
+          - Not the most aesthetically pleasing <br>
         </div>
-      </div> <br> <hr>
-      <div class = "row">
-        <div class = "col-12 small-medium">
-          <div class = "bold">
-            User Journeys
-          </div>
-          <span class = "lead">
-            A map of mask usage for the three individuals interviewed. The height of the line represents the relative satisfaction of the user throughout different stages of the process.
-          </span>
-          <br> <br>
-          <img class = "img-fluid" src = "images/user-journey.png">
-
+      </div>
+      <div class="col-3">
+        <div class="mild-bold lead blue">
+          Mask with Speaker <br>
         </div>
-      </div> <br><hr>
-      <div class = "row">
-        <div class = "col-12">
-          <div class = "medium-smaller bold">
-            Synthesis
-          </div>
-          <div class = "blue small-medium">
-            Essential Features
-          </div>
-          <div class = "lead">
-            Synthesizing information from our research, we were able to focus on several important features an ideal mask would have, including: <br>
-            <div class="pt-1 pb-2">
-              <span class = "mild-bold" >Comfort</span> <span id = "collapse1" data-toggle="collapse" href="#collapseExample" class = "fa fa-chevron-down"></span> <br>
-              <div class="collapse" id="collapseExample">
-                <div class="card card-body mt-1">
-                  A Maskquerade mask should be able to be worn for long periods of time without causing the user significant irritation.
-                </div>
-              </div>
-            </div>
-            <div class="pb-2">
-              <span class = "mild-bold">Aesthetics</span> <span id = "collapse2" data-toggle="collapse" href="#collapseaesthetic" class = "fa fa-chevron-down"></span>
-              <div class="collapse" id="collapseaesthetic">
-                <div class="card card-body mt-1">
-                  A Maskquerade mask should be fashionable so that indiviudals who are concerned about their appearance will not be self-conscious wearing the mask in public.
-                </div>
-              </div>
-            </div>
-            <div class="pb-2">
-            <span class = "mild-bold" >Reusability</span> <span id = "collapse3" data-toggle="collapse" href="#collapseavailability" class = "fa fa-chevron-down"></span>  <span class = "padding-bottom">
-            <div class="collapse" id="collapseavailability">
-              <div class="card card-body">
-                A Maskquerade mask should cater to those who are worried about their impact on their environment by having a high reusability and/or being produced with biodegradable materials.
-              </div>
-            </div>
-            </div>
-            <span class = "mild-bold">Functionality</span> <span id = "collapse4" data-toggle="collapse" href="#collapseaccesible" class = "fa fa-chevron-down"></span>
-            <div class="collapse" id="collapseaccesible">
-              <div class="card card-body">
-                A Maskquerade mask should have a variety of functions, including options for waterproofing and strap-on styles. It should also not exclude target audiences like those who have auditory impairments.
-              </div>
-            </div>
-          </div> <br>
-          <div class = "blue small-medium">
-            Target Questions
-          </div>
-          <div class = "lead">
-            We ultimately framed our research as three questions to summarize what we had discovered: <br>
-            <span class = "mild-bold">1.</span> How can we design masks that are comfortable but do not compromise on functionality? <br>
-            <span class = "mild-bold">2.</span> How can we make masks a more socially admirable item? <br>
-            <span class = "mild-bold">3.</span> Can we make the masks more equitably distributable?
-          </div>
-
+        <div class="lead"><u>Pros</u></div>
+        <div class="info">
+          - Useful for teachers and speakers<br>
+          - Allows wearer to speak unmuffled <br>
         </div>
-      </div> <br> <hr>
-      <div class = "row">
-        <div class = "col-12 medium-smaller bold">
-          Brainstorm
-          <img class = "img-fluid" src = "images/brainstorm.png">
-        </div>
-        <div class = "col-12 medium-smaller bold"><hr>
-          Prototypes
-        </div>
-        <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselIndicators" data-slide-to="1" style="background-color: grey"></li>
-            <li data-target="#carouselIndicators" data-slide-to="2" style="background-color: grey"></li>
-            <li data-target="#carouselIndicators" data-slide-to="3" style="background-color: grey"></li>
-            <li data-target="#carouselIndicators" data-slide-to="4" style="background-color: grey"></li>
-            <li data-target="#carouselIndicators" data-slide-to="5" style="background-color: grey"></li>
-            <li data-target="#carouselIndicators" data-slide-to="6" style="background-color: grey"></li>
-            <li data-target="#carouselIndicators" data-slide-to="7" style="background-color: grey"></li>
-            <li data-target="#carouselIndicators" data-slide-to="8" style="background-color: grey"></li>
-          </ol>
-          <div class="carousel-inner" style="max-height: 450px; max-width: 450px; min-width: 450px;">
-            <div class="carousel-item active">
-              <div class="overlay-container">
-                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">1) Velcro Mask (On)</div>
-                <img class="d-block w-100" src="images/velcro_on_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="overlay-container">
-                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">1) Velcro Mask (Off)</div>
-                <img class="d-block w-100" src="images/velcro_off_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="overlay-container">
-                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">2) Mask with Stickers <br> (Children)</div>
-                <img class="d-block w-100" src="images/stickers_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="overlay-container">
-                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">3) Waterproof Mask</div>
-                <img class="d-block w-100" src="images/waterproof_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="overlay-container">
-                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">4) Mask with a Speaker</div>
-                <img class="d-block w-100" src="images/speakers_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="overlay-container">
-                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">5) Mask made for <br> Glasses-Wearers</div>
-                <img class="d-block w-100" src="images/for_glasses_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="overlay-container">
-                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">6) Foldable Mask <br> (Keychain Container)</div>
-                <img class="d-block w-100" src="images/foldable_keychain.png" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="overlay-container">
-                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">7) Foldable Mask <br> (Wallet)</div>
-                <img class="d-block w-100" src="images/foldable_wallet_prototype.jpg" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="overlay-container">
-                <div style="max-height: 450px; max-width: 450px; min-width: 450px;" class="overlay basic-over">8) Color Changing Mask <br> Based on Usage</div>
-                <img class="d-block w-100" src="images/color_changing_prototype.png" alt="First slide" style="max-height: 450px; max-width: 450px; min-width: 450px;">
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color:black; width: 50px; height: 50px;"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true" style="background-color:black; width: 50px; height: 50px;"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-        <div class = "col-12 medium-smaller bold"><hr>
-          Test
-          ...
+        <div class="lead"><u>Cons</u></div>
+        <div class="info">
+          - Would need to come with microphone or be designed for a variety of microphones<br>
+          - Might look odd <br>
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-3">
+        <div class="mild-bold lead blue">
+          Mask designed for Glasses Wearers <br>
+        </div>
+        <div class="lead"><u>Pros</u></div>
+        <div class="info">
+          - Prevents glasses from fogging up <br>
+          - Can be designed with cheap material <br>
+        </div>
+        <div class="lead"><u>Cons</u></div>
+        <div class="info">
+          - May lack in protection <br>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="mild-bold lead blue">
+          Foldable Mask (Keychain Container) <br>
+        </div>
+        <div class="lead"><u>Pros</u></div>
+        <div class="info">
+          - Easily Transportable <br>
+          - Hard to forget <br>
+        </div>
+        <div class="lead"><u>Cons</u></div>
+        <div class="info">
+          - Low reusability <br>
+          - Not everyone has a keychain <br>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="mild-bold lead blue">
+          Foldable Mask (Wallet) <br>
+        </div>
+        <div class="lead"><u>Pros</u></div>
+        <div class="info">
+          - Easily Transportable<br>
+          - Hard to forget <br>
+        </div>
+        <div class="lead"><u>Cons</u></div>
+        <div class="info">
+          - Low reusability<br>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="mild-bold lead blue">
+          Color Changing Mask (Based on Usage) <br>
+        </div>
+        <div class="lead"><u>Pros</u></div>
+        <div class="info">
+          - Gives wearer indication of when to replace mask <br>
+          - Can be designed to be aesthetically pleasing <br>
+        </div>
+        <div class="lead"><u>Cons</u></div>
+        <div class="info">
+          - Expensive material<br>
+          - May have low breathability <br>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="bold medium-smaller">Moving Forward </div>
+        <div class="lead">After our hypothetical testing, we decided that the three mask ideas that the Maskquerade line
+          of masks will focus on are the <span class="mild-bold">waterproof </span>masks, the masks designed for those
+          with <span class="mild-bold">glasses</span>, and the masks designed for <span
+            class="mild-bold">wallets</span>. </div>
+      </div>
+    </div> <br>
+    <div class="row">
+      <div class="col-4 text-center">
+        <div class = "lead blue">Waterproof Design</div>
+        <img class="img-resize img-fluid" src="images/waterproof_prototype.jpg">
+        <div class = "info">This design will allow more overall flexibility for those who encounter wet weather while wearing there mask.</div>
+      </div>
+      <div class="col-4 text-center">
+        <div class = "lead blue">Glasses Design</div>
+        <img class="img-resize img-fluid" src="images/for_glasses_prototype.jpg">
+        <div class = "info">This design increases the overall accessibility of masks by catering to the needs of a large percentage of the population: those with glasses.</div>
+      </div>
+      <div class="col-4 text-center">
+        <div class = "lead blue">Wallet Design</div>
+        <img class="img-resize img-fluid bottom-padding" src="images/foldable_wallet_prototype.jpg">
+        <div class = "info">This design prevents indiviudals from forgetting their masks while on their way out, which can save much time and hassle.</div>
+      </div>
+    </div> <br>
+    <div class = "row">
+      <div class = "lead">
+        Our overall design process allowed us to create 3 masks which ultimately help increase the overall flexibility and range of mask options and thus may encourage more users to wear masks on a daily basis. We think that our line of masks has potential to increase the fluidity of masks in society and look forward to applying the principles of design learned in this exercise to other endeavors.
+      </div> <br>
+      <div class = "blue info">- The Maskquerade Team</div>
 
-  </body>
+    </div>
+  </div>
+
+</body>
+
 </html>
