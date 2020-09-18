@@ -9,9 +9,13 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,600;1,800&display=swap" rel="stylesheet">
     <script src = "script.js"></script>
-    
+
     <style>
+      body {
+        font-family: 'Raleway', sans-serif !important;
+      }
       .large{
         font-size: 6vh;
       }
@@ -27,7 +31,7 @@
       .medium-smaller{
         font-size: 3vh;
       }
-      
+
       .smaller{
         font-size: 2vh;
       }
@@ -121,31 +125,112 @@
       </div> <br>
       <div class = "row">
         <div class = "col-12">
-          <div class = "bold medium-smaller mt-1">
+          <div class = "bold medium-smaller mt-1 mb-2">
             Background
           </div>
           <span class = "blue small-medium">Our Goal</span> <br>
           <span>Create a mask that others</span>
           <span class = "italics">want</span>
-          <span>to wear.</span> <br>
+          <span>to wear.</span> <br> <hr>
         </div>
       </div>
       <div class = "row">
         <div class = "col-12">
           <div class = "blue small-medium">Timeframe</div>
-          1 week
+          1 week<hr>
         </div> <br>
         <div class = "col-12">
-          <div class = "blue small-medium">The Team</div>
-            2 Computer Science Majors <br>
-            1 Computer Engineering Major <br>
-            ...more team members <br> <br>
+          <div class = "blue small-medium">The Team</div><br>
+          <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-3 pb-1">
+              <div class="card">
+                <blockquote class="blockquote mb-0 card-body">
+                  Lord Crawford
+                  <footer class="blockquote-footer">
+                    <p>Computer Science</p>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <div class="card">
+                <blockquote class="blockquote mb-0 card-body">
+                  Yuanyang Teng
+                  <footer class="blockquote-footer">
+                    <p>Architecture</p>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <div class="card">
+                <blockquote class="blockquote mb-0 card-body">
+                  Julio Gomez
+                  <footer class="blockquote-footer">
+                    <p>Computer Science</p>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <div class="card">
+                <blockquote class="blockquote mb-0 card-body">
+                  Xabier Peralta
+                  <footer class="blockquote-footer">
+                    <p>Computer Science</p>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+          </div><br>
+          <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-3 pb-1">
+              <div class="card">
+                <blockquote class="blockquote mb-0 card-body">
+                  Evan Tilley
+                  <footer class="blockquote-footer">
+                    <p>Computer Engineering</p>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <div class="card">
+                <blockquote class="blockquote mb-0 card-body">
+                  Julia Lin
+                  <footer class="blockquote-footer">
+                    <p>Architecture</p>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <div class="card">
+                <blockquote class="blockquote mb-0 card-body">
+                  Dillon Davis
+                  <footer class="blockquote-footer">
+                    <p>Computer Science</p>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <div class="card">
+                <blockquote class="blockquote mb-0 card-body">
+                  Roopa Bhat
+                  <footer class="blockquote-footer">
+                    <p>Computer Science</p>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+          </div><br>
         </div>
-      </div>
+      </div> <br>
       <div class = "row">
         <div class = "col-12">
           <div id="discover" class = "bold blue medium pl-0">
-            <a style="text-decoration: none; cursor: pointer;" id="#discover">Discover and Define</a>
+            <a style="text-decoration: none; cursor: pointer;" href="#discover">Discover and Define</a>
           </div>
         </div>
       </div>
@@ -169,7 +254,7 @@
                 <span class="text-info">Proven to be effective.</span><br />
                 <span class="text-muted">Have a manually tie.</span><br />
               </dd>
-              
+
               <dt class="col-sm-3"><span class="border-left pl-2">Elastic</span></dt>
               <dd class="col-sm-9 pl-4">
                 <span class="text-info">Adaptable to various faces.</span><br />
@@ -214,8 +299,8 @@
               </dd>
             </dl>
           </section>
-        </div> 
-      </div> <br>
+        </div>
+      </div> <hr>
       <div class = "row">
         <div class = "col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class = "blue small-medium pb-2">
@@ -280,18 +365,18 @@
           </div>
 
         </div>
-      </div> <br>
+      </div> <br> <hr>
       <div class = "row">
         <div class = "col-12">
           <div class = "blue small-medium pb-2">
-            Target Audiences
+            Target Users
           </div>
           <div class="row">
             <div class="col-sm-4 col-md-3">
               <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Amputees <span class="float-right">🙋‍♂️</span></a>
-                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Diseased <span class="float-right">😷</span></a>
-                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Disabled <span class="float-right">👂</span></a>
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">One-Handed <span class="float-right">🙋‍♂️</span></a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Asmathics <span class="float-right">😷</span></a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Deaf & Mute <span class="float-right">👂</span></a>
                 <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Kids <span class="float-right">🐣</span></a>
               </div>
             </div>
@@ -322,16 +407,16 @@
           </div>
         </div>
       </div> <br> <br>
-      <div class = "row text-center">
+      <div class = "row">
         <div class = "col-12">
-          <div class = "medium bold blue">
-            Develop and Deliver
+          <div id="develop" class = "medium bold blue">
+            <a style="text-decoration: none; cursor: pointer;" href="#develop">Develop and Deliver</a>
           </div>
         </div>
       </div>
       <div class = "row">
         <div class = "col-12">
-          <div class = "medium-smaller bold">
+          <div class = "medium-smaller bold pb-2 pt-2">
             Engagement
           </div>
           <div class = "blue small-medium">
@@ -339,7 +424,7 @@
           </div>
           <span class = "lead" >In order to get a sense of how individuals use their masks, and identify key elements that would improve their experience, we interviewed three mask wearers, and created <b>User Journey Maps</b> to help visualize their descriptions.</span>
         </div>
-      </div> <br>
+      </div> <br> <hr>
       <div class = "row">
         <div class = "col-4 lead">
           <div class = "text-center small-medium mild-bold lead">Lord Crawford</div>
@@ -349,7 +434,7 @@
           <span class = "milder-bold">Concerns</span> <br>
           - Reusability <br>
           - Breathability
-          
+
         </div>
         <div class = "col-4 lead">
           <div class = "text-center mild-bold lead small-medium">Y.Y. Teng</div>
@@ -369,7 +454,7 @@
           - Availability <br>
           - Mask weight
         </div>
-      </div> <br>
+      </div> <br> <hr>
       <div class = "row">
         <div class = "col-12 small-medium">
           <div class = "bold text-center">
@@ -377,12 +462,12 @@
           </div>
           <span class = "lead">
             A map of mask usage for the three individuals interviewed. The height of the line represents the relative satisfaction of the user throughout different stages of the process.
-          </span> 
+          </span>
           <br> <br>
           <img class = "img-fluid" src = "images/user-journey.png">
 
         </div>
-      </div>
+      </div> <br><hr>
       <div class = "row">
         <div class = "col-12">
           <div class = "medium-smaller bold">
@@ -393,25 +478,29 @@
           </div>
           <div class = "lead">
             Synthesizing information from our research, we were able to focus on several important features an ideal mask would have, including: <br>
-            <span class = "mild-bold" >Comfort</span> <span id = "collapse1" data-toggle="collapse" href="#collapseExample" class = "fa fa-chevron-down"></span> <br> 
-            <div class="collapse" id="collapseExample">
-              <div class="card card-body">
-                A Maskquerade mask should be able to be worn for long periods of time without causing the user significant irritation.
+            <div class="pt-1 pb-2">
+              <span class = "mild-bold" >Comfort</span> <span id = "collapse1" data-toggle="collapse" href="#collapseExample" class = "fa fa-chevron-down"></span>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body mt-1">
+                  A Maskquerade mask should be able to be worn for long periods of time without causing the user significant irritation.
+                </div>
               </div>
             </div>
-            <span class = "mild-bold" >Aesthetics</span> <span id = "collapse2" data-toggle="collapse" href="#collapseaesthetic" class = "fa fa-chevron-down"></span> <br> 
-            <div class="collapse" id="collapseaesthetic">
-              <div class="card card-body">
-                A Maskquerade mask should be fashionable so that indiviudals who are concerned about their appearance will not be self-conscious wearing the mask in public.
+            <div class="pb-2">
+              <span class = "mild-bold" >Aesthetics</span> <span id = "collapse2" data-toggle="collapse" href="#collapseaesthetic" class = "fa fa-chevron-down"></span> 
+              <div class="collapse" id="collapseaesthetic">
+                <div class="card card-body mt-1">
+                  A Maskquerade mask should be fashionable so that indiviudals who are concerned about their appearance will not be self-conscious wearing the mask in public.
+                </div>
               </div>
-            </div>
+            </div> 
             <span class = "mild-bold" >Reusability</span> <span id = "collapse3" data-toggle="collapse" href="#collapseavailability" class = "fa fa-chevron-down"></span> <br> 
             <div class="collapse" id="collapseavailability">
               <div class="card card-body">
                 A Maskquerade mask should cater to those who are worried about their impact on their environment by having a high reusability and/or being produced with biodegradable materials.
               </div>
-            </div>
-            <span class = "mild-bold">Functionality</span> <span id = "collapse4" data-toggle="collapse" href="#collapseaccesible" class = "fa fa-chevron-down"></span> <br>
+            </div> 
+            <span class = "mild-bold">Functionality</span> <span id = "collapse4" data-toggle="collapse" href="#collapseaccesible" class = "fa fa-chevron-down"></span> 
             <div class="collapse" id="collapseaccesible">
               <div class="card card-body">
                 A Maskquerade mask should have a variety of functions, including options for waterproofing and strap-on styles. It should also not exclude target audiences like those who have auditory impairments.
@@ -432,10 +521,11 @@
           </div>
 
         </div>
-      </div>
+      </div> <br> <hr>
       <div class = "row">
         <div class = "col-12 medium-smaller bold">
           Brainstorm
+          <img class = "img-fluid" src = "images/brainstorm.png">
         </div>
         <div class = "col-12 medium-smaller bold">
           Prototypes
